@@ -1,6 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
+import { signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+import { auth } from "./firebase-config";
 
 export function Login() {
+  const [loginEmail, setLoginEmail] = useState("");
+  const [loginPassword, setLoginPassword] = useState("");
+
+  const [user, setUser] = useState({});
+
+  onAuthStateChanged(auth, (currentUser) => {
+    setUser(currentUser);
+  });
+
+  const login = async () => {
+    try {
+      const user = await signInWithEmailAndPassword(
+        auth,
+        loginEmail,
+        loginPassword
+      );
+      console.log(user);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
   return (
     <div className="flex gap-36 items-center justify-center h-screen bg-gradient-to-b  from-neutral-100 to-neutral-300">
       <img className=" " src="speakwise.png" alt="" />
@@ -19,6 +43,9 @@ export function Login() {
               id="email"
               type="email"
               placeholder="Enter your email"
+              onChange={(event) => {
+                setLoginEmail(event.target.value);
+              }}
             />
           </div>
           <div className="mb-6">
@@ -33,15 +60,23 @@ export function Login() {
               id="password"
               type="password"
               placeholder="Enter your password"
+              onChange={(event) => {
+                setLoginPassword(event.target.value);
+              }}
             />
           </div>
 
           <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="submit"
+            onClick={login}
           >
             Log In
           </button>
+          <div>
+            <h4>User Logged In :</h4>
+            {user?.email}
+          </div>
         </form>
       </div>
     </div>
