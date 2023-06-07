@@ -1,22 +1,25 @@
-import React, { useState } from "react";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import React from "react";
+import { useState } from "react";
+import { signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase-config";
 
 export function Login() {
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
 
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState({});
+
+  onAuthStateChanged(auth, (currentUser) => {
+    setUser(currentUser);
+  });
 
   const login = async () => {
     try {
-      const userCredential = await signInWithEmailAndPassword(
+      const user = await signInWithEmailAndPassword(
         auth,
         loginEmail,
         loginPassword
       );
-      const { user } = userCredential;
-      setUser(user);
       console.log(user);
     } catch (error) {
       console.log(error.message);
@@ -24,7 +27,7 @@ export function Login() {
   };
 
   return (
-    <div className="flex gap-36 items-center justify-center h-screen bg-gradient-to-b from-neutral-100 to-neutral-300">
+    <div className="flex gap-36 items-center justify-center h-screen bg-gradient-to-b  from-neutral-100 to-neutral-300">
       <img className=" " src="speakwise.png" alt="" />
       <div className="w-full max-w-md bg-white rounded-lg shadow-xl p-8">
         <h2 className="text-3xl font-bold text-center mb-6">Login</h2>
@@ -41,8 +44,9 @@ export function Login() {
               id="email"
               type="email"
               placeholder="Enter your email"
-              value={loginEmail}
-              onChange={(event) => setLoginEmail(event.target.value)}
+              onChange={(event) => {
+                setLoginEmail(event.target.value);
+              }}
             />
           </div>
           <div className="mb-6">
@@ -57,21 +61,22 @@ export function Login() {
               id="password"
               type="password"
               placeholder="Enter your password"
-              value={loginPassword}
-              onChange={(event) => setLoginPassword(event.target.value)}
+              onChange={(event) => {
+                setLoginPassword(event.target.value);
+              }}
             />
           </div>
 
           <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            type="button"
+            type="submit"
             onClick={login}
           >
             Log In
           </button>
           <div>
-            <h4>User Logged In:</h4>
-            {user && user.email}
+            <h4>User Logged In :</h4>
+            {user?.email}
           </div>
         </form>
       </div>
