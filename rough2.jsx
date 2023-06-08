@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "./firebase-config";
-import { useHistory } from "react-router-dom";
 
 export function Login() {
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
+
   const [user, setUser] = useState(null);
-  const history = useHistory();
 
   const login = async () => {
     try {
@@ -19,11 +18,6 @@ export function Login() {
       const { user } = userCredential;
       setUser(user);
       console.log(user);
-
-      // Redirect to /user after 2 seconds
-      setTimeout(() => {
-        history.push("/user");
-      }, 2000);
     } catch (error) {
       console.log(error.message);
     }
@@ -31,7 +25,7 @@ export function Login() {
 
   return (
     <div className="flex gap-36 items-center justify-center h-screen bg-gradient-to-b from-neutral-100 to-neutral-300">
-      <img className="" src="speakwise.png" alt="" />
+      <img className=" " src="speakwise.png" alt="" />
       <div className="w-full max-w-md bg-white rounded-lg shadow-xl p-8">
         <h2 className="text-3xl font-bold text-center mb-6">Login</h2>
         <form>
