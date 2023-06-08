@@ -5,7 +5,7 @@ import "./index.css";
 import { Home } from "./Home";
 import { Login } from "./Login";
 import { Signup } from "./Signup";
-import { User } from "./user";
+import { User } from "./User";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
