@@ -77,6 +77,7 @@ export function Login() {
         </form>
       </div>
       <a href="/user">User page temp</a>
+      <a href="/mentor">Mentor page temp</a>
     </div>
   );
 }

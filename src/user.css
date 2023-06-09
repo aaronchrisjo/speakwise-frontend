@@ -3,3 +3,8 @@
   background-size: cover;
   background-position: center;
 }
+.custom-background2 {
+  background-image: url("assets/mentor-bg.jpg");
+  background-size: cover;
+  background-position: center;
+}

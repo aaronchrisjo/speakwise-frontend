@@ -6,6 +6,7 @@ import { Home } from "./Home";
 import { Login } from "./Login";
 import { Signup } from "./Signup";
 import { User } from "./User";
+import { Mentor } from "./Mentor";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
   {
     path: "/user",
     element: <User />,
+  },
+  {
+    path: "/mentor",
+    element: <Mentor />,
   },
 ]);
 
