@@ -73,8 +73,10 @@ export function Login() {
             <h4>User Logged In:</h4>
             {user && user.email}
           </div>
+          <a href="/">Go Back to Home</a>
         </form>
       </div>
+      <a href="/user">User page temp</a>
     </div>
   );
 }
