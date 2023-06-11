@@ -7,6 +7,7 @@ import { Login } from "./Login";
 import { Signup } from "./Signup";
 import { User } from "./User";
 import { Mentor } from "./Mentor";
+import { About } from "./About";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
   {
     path: "/mentor",
     element: <Mentor />,
+  },
+  {
+    path: "/about",
+    element: <About />,
   },
 ]);
 

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import "./user.css";
 
-export function User() {
+export function About() {
   return (
     <main className="flex flex-col min-h-screen gap-8 bg-gradient-to-b from-white to-neutral-300 text-neutral-800">
       <Navbar fluid rounded>
@@ -28,91 +28,57 @@ export function User() {
           </Dropdown>
         </div>
         <Navbar.Collapse>
-          <Navbar.Link active href="#">
+          <Navbar.Link href="/user">
             <p>Home</p>
           </Navbar.Link>
-          <Navbar.Link href="/about">About</Navbar.Link>
+          <Navbar.Link active href="/about">
+            About
+          </Navbar.Link>
           <Navbar.Link href="#">Services</Navbar.Link>
           <Navbar.Link href="#">Contact</Navbar.Link>
         </Navbar.Collapse>
       </Navbar>
 
-      <div className="flex flex-col items-center justify-center h-72">
-        <h1 className="text-6xl font-bold text-center text-slate-800 mb-4">
-          Welcome to SpeakWise, User!
+      <div className="flex flex-col items-center justify-center h-28">
+        <h1 className="text-6xl font-bold text-center text-slate-800 mb-2">
+          About Us
         </h1>
-        <p className="text-3xl text-center text-slate-600">
-          Start your journey to fluency Now
-        </p>
+        <p className="text-3xl text-center text-slate-600">Meet Our Team</p>
       </div>
 
       <div className="flex gap-8 px-11 mx-auto">
-        <Card className="max-w-sm" href="#">
+        <Card imgAlt="Aaron CJ.jpg" imgSrc="aaron.jpg">
           <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            <p>Noteworthy technology acquisitions 2021</p>
+            <p>Aaron Chrisjo Anil</p>
           </h5>
           <p className="font-normal text-gray-700 dark:text-gray-400">
-            <p>
-              Here are the biggest enterprise technology acquisitions of 2021 so
-              far, in reverse chronological order.
-            </p>
+            <p>Contributed in Front-end dev.</p>
           </p>
         </Card>
-        <Card className="max-w-sm" href="#">
+        <Card imgAlt="" imgSrc="/images/blog/image-1.jpg">
           <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            <p>Noteworthy technology acquisitions 2021</p>
+            <p>Aman Jose</p>
           </h5>
           <p className="font-normal text-gray-700 dark:text-gray-400">
-            <p>
-              Here are the biggest enterprise technology acquisitions of 2021 so
-              far, in reverse chronological order.
-            </p>
-          </p>
-        </Card>
-        <Card className="max-w-sm" href="#">
-          <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            <p>Noteworthy technology acquisitions 2021</p>
-          </h5>
-          <p className="font-normal text-gray-700 dark:text-gray-400">
-            <p>
-              Here are the biggest enterprise technology acquisitions of 2021 so
-              far, in reverse chronological order.
-            </p>
+            <p>Contributed in Back-end dev.</p>
           </p>
         </Card>
       </div>
       <div className="flex gap-8 px-11 mx-auto">
-        <Card className="max-w-sm" href="#">
+        <Card imgAlt="" imgSrc="/images/blog/image-1.jpg">
           <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            <p>Noteworthy technology acquisitions 2021</p>
+            <p>Ann B Mariyam</p>
           </h5>
           <p className="font-normal text-gray-700 dark:text-gray-400">
-            <p>
-              Here are the biggest enterprise technology acquisitions of 2021 so
-              far, in reverse chronological order.
-            </p>
+            <p>Contributed in Research and Front-end dev.</p>
           </p>
         </Card>
-        <Card className="max-w-sm" href="#">
+        <Card imgAlt="" imgSrc="/images/blog/image-1.jpg">
           <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            <p>Noteworthy technology acquisitions 2021</p>
+            <p>Devinanda SK</p>
           </h5>
           <p className="font-normal text-gray-700 dark:text-gray-400">
-            <p>
-              Here are the biggest enterprise technology acquisitions of 2021 so
-              far, in reverse chronological order.
-            </p>
-          </p>
-        </Card>
-        <Card className="max-w-sm" href="#">
-          <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            <p>Noteworthy technology acquisitions 2021</p>
-          </h5>
-          <p className="font-normal text-gray-700 dark:text-gray-400">
-            <p>
-              Here are the biggest enterprise technology acquisitions of 2021 so
-              far, in reverse chronological order.
-            </p>
+            <p>Contributed in Research and Back-end dev.</p>
           </p>
         </Card>
       </div>
