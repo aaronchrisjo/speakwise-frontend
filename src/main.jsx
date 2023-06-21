@@ -9,7 +9,6 @@ import { User } from "./User";
 import { Mentor } from "./Mentor";
 import { About } from "./About";
 import { Courses } from "./Courses";
-import {lobby} from "lobb"
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
