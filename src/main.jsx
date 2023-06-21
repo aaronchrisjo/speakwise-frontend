@@ -8,6 +8,7 @@ import { Signup } from "./Signup";
 import { User } from "./User";
 import { Mentor } from "./Mentor";
 import { About } from "./About";
+import { Courses } from "./Courses";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -35,6 +36,14 @@ const router = createBrowserRouter([
   {
     path: "/about",
     element: <About />,
+  },
+  {
+    path: "/courses",
+    element: <Courses />,
+  },
+  {
+    path: "/lobby",
+    element: <lobby.html />,
   },
 ]);
 
