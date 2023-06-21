@@ -1,6 +1,7 @@
 import React from "react";
-import { Navbar, Card, Dropdown, Footer } from "flowbite-react";
+import { Navbar, Card, Dropdown, Footer, Button } from "flowbite-react";
 import { Link } from "react-router-dom";
+import { HiOutlineArrowRight } from "react-icons/hi";
 
 import "./user.css";
 
@@ -116,6 +117,12 @@ export function User() {
           </p>
         </Card>
       </div>
+
+      <Button className="flex mx-auto" href="/courses">
+        <p>Register New Course</p>
+        <HiOutlineArrowRight className="ml-2 h-5 w-5" />
+      </Button>
+
       <Footer container>
         <div className="w-full text-center">
           <div className="w-full justify-between sm:flex sm:items-center sm:justify-between">

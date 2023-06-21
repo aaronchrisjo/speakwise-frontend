@@ -78,6 +78,7 @@ export function Login() {
       </div>
       <a href="/user">User page temp</a>
       <a href="/mentor">Mentor page temp</a>
+      <a href="https://speakwise-vc.vercel.app/lobby.html">vc temp</a>
     </div>
   );
 }
